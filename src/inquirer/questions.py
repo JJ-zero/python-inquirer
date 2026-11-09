@@ -163,6 +163,18 @@ class List(Question):
         self.autocomplete = autocomplete
 
 
+class Date(Question):
+    kind = "date"
+
+    def __init__(
+        self,
+        name,
+        message="",
+        choices=None
+    ):
+        super().__init__(name, message, choices)
+
+
 class Checkbox(Question):
     kind = "checkbox"
 

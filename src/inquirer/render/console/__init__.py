@@ -12,6 +12,7 @@ from inquirer.render.console._list import List
 from inquirer.render.console._password import Password
 from inquirer.render.console._path import Path
 from inquirer.render.console._text import Text
+from inquirer.render.console._date import Date
 
 
 class ConsoleRender:
@@ -64,6 +65,9 @@ class ConsoleRender:
         self._previous_error = None
 
     def _print_options(self, render):
+        # if hasattr(render, "print_options") and callable(render.print_options):
+        #     render.print_options()
+        #     return
         for message, symbol, color in render.get_options():
             if hasattr(message, "decode"):  # python 2
                 message = message.decode("utf-8")
@@ -160,6 +164,7 @@ class ConsoleRender:
             "list": List,
             "checkbox": Checkbox,
             "path": Path,
+            "date": Date,
         }
 
         if question_type not in matrix:

@@ -6,6 +6,7 @@ from inquirer.questions import List
 from inquirer.questions import Password
 from inquirer.questions import Path
 from inquirer.questions import Text
+from inquirer.questions import Date
 from inquirer.questions import load_from_dict
 from inquirer.questions import load_from_json
 from inquirer.questions import load_from_list
@@ -22,6 +23,7 @@ __all__ = [
     "prompt",
     "Text",
     "Editor",
+    "Date",
     "Password",
     "Confirm",
     "List",
